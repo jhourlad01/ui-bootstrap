@@ -96,7 +96,7 @@ body {
 .dark-theme .table th {
   border-color: #444;
   background-color: #1e1e2f !important;
-  color: #fff !important;
+  color: #fff
 }
 
 .dark-theme .accordion-button {
