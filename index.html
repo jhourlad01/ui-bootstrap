@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,143 +7,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      transition: all 0.3s ease;
-    }
-
-    .light-theme {
-      background: linear-gradient(to right, #e0e0e0, #ffffff);
-      color: #000;
-    }
-
-    .dark-theme, .dark-theme .modal-content {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
-    }
-
-    .navbar {
-      transition: background-color 0.3s ease;
-    }
-
-    .light-theme .navbar {
-      background: #ffffff;
-    }
-
-    .dark-theme .navbar {
-      background: #0d1117;
-    }
-
-    .navbar-brand {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.6rem;
-    }
-
-    .light-theme .navbar-brand,
-    .light-theme .nav-link {
-      color: #000 !important;
-    }
-
-    .dark-theme .navbar-brand,
-    .dark-theme .nav-link {
-      color: #00ffe1 !important;
-    }
-
-    .btn-custom {
-      font-weight: bold;
-      border: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .light-theme .btn-custom {
-      background: #007bff;
-      color: #fff;
-    }
-
-    .dark-theme .btn-custom {
-      background: #00ffe1;
-      color: #000;
-    }
-
-    .carousel-item img {
-      height: 400px;
-      object-fit: cover;
-    }
-
-    .carousel-caption {
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(5px);
-      padding: 1rem;
-      border-radius: 1rem;
-    }
-
-    .text-end {
-      text-align: right;
-    }
-
-    .light-theme .table thead {
-      background-color: #007bff;
-      color: #fff;
-    }
-
-    .dark-theme .table thead {
-      background-color: transparent;
-      color: #000;
-    }
-
-    .light-theme .table {
-      background-color: #fff;
-      color: #000;
-    }
-
-    .dark-theme .table {
-      background-color: transparent;
-      color: #fff;
-    }
-
-    .dark-theme .table td,
-    .dark-theme .table th {
-      border-color: #444;
-      background-color: #1e1e2f !important;
-      color: #fff !important;
-    }
-
-    .dark-theme .accordion-button {
-      background-color: #1e1e2f;
-      color: #fff;
-    }
-
-    .dark-theme .accordion-button:not(.collapsed) {
-      background-color: #2c2c3e;
-      color: #00ffe1;
-    }
-
-    .dark-theme .accordion-body {
-      background-color: #1e1e2f;
-      color: #fff;
-    }
-
-    .dark-theme .accordion-item {
-      border: 1px solid #333;
-    }
-
-    @media (max-width: 768px) {
-      .carousel-item img {
-        height: 250px;
-      }
-    }
-
-    .crypto-icon {
-      width: 24px;
-      height: 24px;
-      vertical-align: middle;
-      margin-right: 8px;
-    }
-  </style>
+  <link href="styles/style.css" rel="stylesheet" />
 </head>
-
 <body class="">
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Bootstrap UI Demo</a>
@@ -162,6 +28,7 @@
     </div>
   </nav>
 
+  <!-- Carousel -->
   <div id="heroCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -194,9 +61,11 @@
     </button>
   </div>
 
+  <!-- Dashboard Sections -->
   <div class="container-fluid">
     <div class="row mb-4">
       <div class="col-md-3">
+        <!-- Cards -->
         <div class="card text-bg-primary mb-3">
           <div class="card-body">
             <h5 class="card-title">Overview</h5>
@@ -227,8 +96,10 @@
         </div>
       </div>
 
+      <!-- Accordion -->
       <div class="col-md-9">
         <div class="accordion" id="dashboardSections">
+          <!-- Market Charts -->
           <div class="accordion-item">
             <h2 class="accordion-header" id="chartsHeading">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chartsCollapse">
@@ -238,23 +109,16 @@
             <div id="chartsCollapse" class="accordion-collapse collapse show">
               <div class="accordion-body">
                 <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <canvas id="chart1"></canvas>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <canvas id="chart2"></canvas>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <canvas id="chart3"></canvas>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <canvas id="chart4"></canvas>
-                  </div>
+                  <div class="col-md-6 mb-3"><canvas id="chart1"></canvas></div>
+                  <div class="col-md-6 mb-3"><canvas id="chart2"></canvas></div>
+                  <div class="col-md-6 mb-3"><canvas id="chart3"></canvas></div>
+                  <div class="col-md-6 mb-3"><canvas id="chart4"></canvas></div>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- Crypto Assets Table -->
           <div class="accordion-item">
             <h2 class="accordion-header" id="assetsHeading">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#assetsCollapse">
@@ -283,6 +147,7 @@
             </div>
           </div>
 
+          <!-- Recent Trades -->
           <div class="accordion-item">
             <h2 class="accordion-header" id="tradesHeading">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tradesCollapse">
@@ -314,19 +179,16 @@
             <input type="email" class="form-control" id="emailInput" required />
             <div class="invalid-feedback">Please enter a valid email.</div>
           </div>
-
           <div class="mb-3">
             <label for="passwordInput" class="form-label">Password</label>
             <input type="password" class="form-control" id="passwordInput" minlength="6" required />
             <div class="invalid-feedback">Password must be at least 6 characters.</div>
           </div>
-
           <div class="mb-3">
             <label for="confirmInput" class="form-label">Re-Type</label>
             <input type="confirm" class="form-control" id="confirmInput" minlength="6" required />
             <div class="invalid-feedback">Password must be at least 6 characters.</div>
           </div>
-
           <div class="form-check mb-3">
             <input type="checkbox" class="form-check-input" id="termsCheck" required />
             <label class="form-check-label" for="termsCheck">Agree to terms</label>
@@ -343,156 +205,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
-  <script>
-    (() => {
-      const body = document.body;
-      const themeToggleBtn = document.getElementById('themeToggle');
-
-      function setTheme(theme) {
-        if (theme === 'dark') {
-          body.classList.add('dark-theme');
-          body.classList.remove('light-theme');
-          themeToggleBtn.textContent = 'Light Mode';
-        } else {
-          body.classList.add('light-theme');
-          body.classList.remove('dark-theme');
-          themeToggleBtn.textContent = 'Dark Mode';
-        }
-        localStorage.setItem('theme', theme);
-      }
-
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      setTheme(savedTheme);
-
-      themeToggleBtn.addEventListener('click', () => {
-        const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
-        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
-      });
-
-      // Chart.js examples
-      const ctx1 = document.getElementById('chart1').getContext('2d');
-      const chart1 = new Chart(ctx1, {
-        type: 'line',
-        data: {
-          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-          datasets: [{
-            label: 'BTC Price',
-            data: [30000, 31000, 32000, 31500, 32500, 33000, 33500],
-            borderColor: 'rgb(255, 99, 132)',
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            tension: 0.3,
-            fill: true,
-            pointRadius: 3,
-          }]
-        },
-        options: {
-          responsive: true,
-          scales: { y: { beginAtZero: false } }
-        }
-      });
-
-      const ctx2 = document.getElementById('chart2').getContext('2d');
-      const chart2 = new Chart(ctx2, {
-        type: 'bar',
-        data: {
-          labels: ['BTC', 'ETH', 'SOL', 'ADA', 'XRP'],
-          datasets: [{
-            label: 'Market Cap (Billion USD)',
-            data: [600, 300, 40, 50, 20],
-            backgroundColor: [
-              '#f7931a',
-              '#627eea',
-              '#00ffa3',
-              '#0033ad',
-              '#346aa9'
-            ]
-          }]
-        },
-        options: {
-          responsive: true,
-          scales: { y: { beginAtZero: true } }
-        }
-      });
-
-      const ctx3 = document.getElementById('chart3').getContext('2d');
-      const chart3 = new Chart(ctx3, {
-        type: 'pie',
-        data: {
-          labels: ['BTC', 'ETH', 'Others'],
-          datasets: [{
-            data: [50, 30, 20],
-            backgroundColor: ['#f7931a', '#627eea', '#bbb']
-          }]
-        },
-        options: { responsive: true }
-      });
-
-      const ctx4 = document.getElementById('chart4').getContext('2d');
-      const chart4 = new Chart(ctx4, {
-        type: 'doughnut',
-        data: {
-          labels: ['Long', 'Short'],
-          datasets: [{
-            data: [70, 30],
-            backgroundColor: ['#28a745', '#dc3545']
-          }]
-        },
-        options: { responsive: true }
-      });
-
-      // Fetch Top 50 Coinbase Listed Assets from CoinGecko and populate table
-      const tableBody = document.querySelector('#assetTable tbody');
-
-      async function fetchAssets() {
-        try {
-          const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false&price_change_percentage=24h');
-          if (!res.ok) throw new Error('Network response was not ok');
-          const data = await res.json();
-
-          tableBody.innerHTML = '';
-          data.forEach((asset, index) => {
-            if (!asset.platforms || Object.keys(asset.platforms).length === 0) {
-              const priceChange = asset.price_change_percentage_24h?.toFixed(2) || '0.00';
-              const priceChangeClass = priceChange >= 0 ? 'text-success' : 'text-danger';
-              const priceChangeSymbol = priceChange >= 0 ? '▲' : '▼';
-              tableBody.innerHTML += `
-                <tr>
-                  <td class="text-end">${index + 1}</td>
-                  <td><img src="${asset.image}" alt="${asset.symbol}" class="crypto-icon"/>${asset.symbol.toUpperCase()}</td>
-                  <td>${asset.name}</td>
-                  <td class="text-end">$${asset.current_price.toLocaleString()}</td>
-                  <td class="text-end">$${asset.market_cap.toLocaleString()}</td>
-                  <td class="text-end">$${asset.total_volume.toLocaleString()}</td>
-                  <td class="text-end ${priceChangeClass}">${priceChangeSymbol} ${priceChange}%</td>
-                </tr>
-              `;
-            }
-          });
-        } catch (error) {
-          tableBody.innerHTML = '<tr><td colspan="7" class="text-center text-danger">Failed to load asset data.</td></tr>';
-        }
-      }
-
-      fetchAssets();
-
-      // Sign Up form validation
-      const signUpForm = document.getElementById('signUpForm');
-      signUpForm.addEventListener('submit', e => {
-        e.preventDefault();
-        if (!signUpForm.checkValidity()) {
-          e.stopPropagation();
-          signUpForm.classList.add('was-validated');
-          return;
-        }
-        // Here you would handle form submission, e.g. via AJAX
-        alert('Sign Up successful (demo)');
-        const modal = bootstrap.Modal.getInstance(document.getElementById('signUpModal'));
-        modal.hide();
-        signUpForm.reset();
-        signUpForm.classList.remove('was-validated');
-      });
-    })();
-  </script>
+  <script src="scripts/charts.js"></script>
+  <script src="scripts/coingecko.js"></script>
+  <script src="scripts/script.js"></script>
 </body>
-
 </html>
