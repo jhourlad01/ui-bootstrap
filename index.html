@@ -19,7 +19,7 @@
       color: #000;
     }
 
-    .dark-theme {
+    .dark-theme, .dark-theme .modal-content {
       background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: #fff;
     }
@@ -153,8 +153,6 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav me-3">
-          <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
           <li class="nav-item">
             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signUpModal">Sign Up</a>
           </li>
@@ -316,11 +314,19 @@
             <input type="email" class="form-control" id="emailInput" required />
             <div class="invalid-feedback">Please enter a valid email.</div>
           </div>
+
           <div class="mb-3">
             <label for="passwordInput" class="form-label">Password</label>
             <input type="password" class="form-control" id="passwordInput" minlength="6" required />
             <div class="invalid-feedback">Password must be at least 6 characters.</div>
           </div>
+
+          <div class="mb-3">
+            <label for="confirmInput" class="form-label">Re-Type</label>
+            <input type="confirm" class="form-control" id="confirmInput" minlength="6" required />
+            <div class="invalid-feedback">Password must be at least 6 characters.</div>
+          </div>
+
           <div class="form-check mb-3">
             <input type="checkbox" class="form-check-input" id="termsCheck" required />
             <label class="form-check-label" for="termsCheck">Agree to terms</label>
