@@ -11,9 +11,9 @@ A demo repository showcasing UI development using **Bootstrap** and **jQuery** w
 
 ## Features
 
-- Responsive layout with Bootstrap components
-- Dynamic UI interactions via jQuery
-- Simple charts (line, bar, pie) powered by Chart.js
+- Responsive layout with Bootstrap components  
+- Dynamic UI interactions via jQuery  
+- Simple charts (line, bar, pie) powered by Chart.js  
 - Clean, minimal setup without dependencies beyond Bootstrap, jQuery, and Chart.js
 
 ## Usage
@@ -31,3 +31,7 @@ A demo repository showcasing UI development using **Bootstrap** and **jQuery** w
 ## License
 
 MIT License
+
+## Disclaimer
+
+This project is **free to use and distribute** for any purpose. However, the author, **Jhourlad Estrella**, assumes **no liability** for any issues, damages, or losses resulting from the use of this code. Use at your own risk.
