@@ -64,99 +64,108 @@
   <!-- Dashboard Sections -->
   <div class="container-fluid">
     <div class="row mb-4">
-      <div class="col-md-3">
-        <!-- Cards -->
-        <div class="card text-bg-primary mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Overview</h5>
-            <p class="card-text">General stats and summaries.</p>
-            <a href="#" class="btn btn-light btn-sm">View</a>
+      <div class="dashboard-wrapper">
+        <!-- Toggle Icon - positioned outside cards container -->
+        <div class="cards-toggle-container">
+          <button id="cardsToggle" class="btn btn-sm btn-outline-secondary cards-toggle-btn">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+        </div>
+        
+        <div class="col-md-3" id="cardsContainer">
+          <!-- Cards -->
+          <div class="card text-bg-primary mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Overview</h5>
+              <p class="card-text">General stats and summaries.</p>
+              <a href="#" class="btn btn-light btn-sm">View</a>
+            </div>
+          </div>
+          <div class="card text-bg-success mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Bots</h5>
+              <p class="card-text">Manage your trading bots.</p>
+              <a href="#" class="btn btn-light btn-sm">Manage</a>
+            </div>
+          </div>
+          <div class="card text-bg-warning mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Analytics</h5>
+              <p class="card-text">Detailed charts and KPIs.</p>
+              <a href="#" class="btn btn-light btn-sm">Analyze</a>
+            </div>
+          </div>
+          <div class="card text-bg-danger mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Settings</h5>
+              <p class="card-text">Configure system options.</p>
+              <a href="#" class="btn btn-light btn-sm">Edit</a>
+            </div>
           </div>
         </div>
-        <div class="card text-bg-success mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Bots</h5>
-            <p class="card-text">Manage your trading bots.</p>
-            <a href="#" class="btn btn-light btn-sm">Manage</a>
-          </div>
-        </div>
-        <div class="card text-bg-warning mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Analytics</h5>
-            <p class="card-text">Detailed charts and KPIs.</p>
-            <a href="#" class="btn btn-light btn-sm">Analyze</a>
-          </div>
-        </div>
-        <div class="card text-bg-danger mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Settings</h5>
-            <p class="card-text">Configure system options.</p>
-            <a href="#" class="btn btn-light btn-sm">Edit</a>
-          </div>
-        </div>
-      </div>
 
-      <!-- Accordion -->
-      <div class="col-md-9">
-        <div class="accordion" id="dashboardSections">
-          <!-- Market Charts -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="chartsHeading">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chartsCollapse">
-                Market Charts
-              </button>
-            </h2>
-            <div id="chartsCollapse" class="accordion-collapse collapse show">
-              <div class="accordion-body">
-                <div class="row">
-                  <div class="col-md-6 mb-3"><canvas id="chart1"></canvas></div>
-                  <div class="col-md-6 mb-3"><canvas id="chart2"></canvas></div>
-                  <div class="col-md-6 mb-3"><canvas id="chart3"></canvas></div>
-                  <div class="col-md-6 mb-3"><canvas id="chart4"></canvas></div>
+        <!-- Accordion -->
+        <div class="col-md-9" id="mainContent">
+          <div class="accordion" id="dashboardSections">
+            <!-- Market Charts -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="chartsHeading">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chartsCollapse">
+                  Market Charts
+                </button>
+              </h2>
+              <div id="chartsCollapse" class="accordion-collapse collapse showx">
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-md-6 mb-3"><canvas id="chart1"></canvas></div>
+                    <div class="col-md-6 mb-3"><canvas id="chart2"></canvas></div>
+                    <div class="col-md-6 mb-3"><canvas id="chart3"></canvas></div>
+                    <div class="col-md-6 mb-3"><canvas id="chart4"></canvas></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Crypto Assets Table -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="assetsHeading">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#assetsCollapse">
-                Top 50 Crypto Assets (Coinbase Listed)
-              </button>
-            </h2>
-            <div id="assetsCollapse" class="accordion-collapse collapse show">
-              <div class="accordion-body">
-                <div class="table-responsive">
-                  <table class="table table-hover" id="assetTable">
-                    <thead>
-                      <tr>
-                        <th class="text-end">#</th>
-                        <th>Symbol</th>
-                        <th>Name</th>
-                        <th class="text-end">Price USD</th>
-                        <th class="text-end">Market Cap</th>
-                        <th class="text-end">24h Volume</th>
-                        <th class="text-end">24h Change</th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
+            <!-- Crypto Assets Table -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="assetsHeading">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#assetsCollapse">
+                  Top 50 Crypto Assets (Coinbase Listed)
+                </button>
+              </h2>
+              <div id="assetsCollapse" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover" id="assetTable">
+                      <thead>
+                        <tr>
+                          <th class="text-end">#</th>
+                          <th>Symbol</th>
+                          <th>Name</th>
+                          <th class="text-end">Price USD</th>
+                          <th class="text-end">Market Cap</th>
+                          <th class="text-end">24h Volume</th>
+                          <th class="text-end">24h Change</th>
+                        </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Recent Trades -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="tradesHeading">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tradesCollapse">
-                Recent Trades
-              </button>
-            </h2>
-            <div id="tradesCollapse" class="accordion-collapse collapse">
-              <div class="accordion-body">
-                <p>Real-time trade data coming soon.</p>
+            <!-- Recent Trades -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="tradesHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tradesCollapse">
+                  Recent Trades
+                </button>
+              </h2>
+              <div id="tradesCollapse" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <p>Real-time trade data coming soon.</p>
+                </div>
               </div>
             </div>
           </div>
